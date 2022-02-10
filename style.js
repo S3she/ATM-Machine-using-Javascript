@@ -4,20 +4,18 @@ let account = new Object();
 
     var NAME = prompt("Enter your name") ;
     var passTry = 3;
-    var BANKNAME = parseInt(prompt("Dear "+ NAME+ " What is your bank name?\n1.Swedbank\n2.SEB\n3.Nordea\n4.Danske Bank\n5.Santander\n6.Handelsbanken\n7.Sparbanken\n8.Others"));
+    var BANKNAME = parseInt(prompt("Dear "+ NAME+ " What is your bank name?\n1. Swedbank\n2. SEB\n3. Nordea\n4. Danske Bank\n5. Santander\n6. Handelsbanken\n7. Sparbanken\n8. Others"));
     var YES_NO = 2;
     var passwordEntered = parseInt(prompt("Dear "+NAME+ ", Enter your 4 digits PIN"));
     var correct_pass = (/^[0-9]{4}$/); 
     var min_bal = 100;
-
     account.balance = 100;
 
 
     
-    account.getBalance = function() {
+ account.getBalance = function() {
         prompt("your Balance: " + account.balance + "$ ");
     }
-
 
 
 account.deposit = function() {
@@ -72,10 +70,9 @@ account.exit = function() {
 
     }
    
-     
-
     
-    function checkPassword(password){ //to check if the password is correct or not    
+    
+  function checkPassword(password){ //to check if the password is correct or not    
         if(correct_pass.test(passwordEntered)){
             optionMenu();
         }else{
@@ -94,7 +91,6 @@ account.exit = function() {
             }optionMenu();
         }
     }checkPassword(passwordEntered);
-
 
 
     function optionMenu(){
@@ -129,15 +125,4 @@ account.exit = function() {
 
     }
     this.optionMenu();
-
-  
-
-
-
-
-
-  
-
-   
-
     
