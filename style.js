@@ -2,6 +2,7 @@
 let account = new Object();
 
 
+
     var NAME = prompt("Enter your name") ;
     var passTry = 3;
     var BANKNAME = parseInt(prompt("Dear "+ NAME+ " What is your bank name?\n1. Swedbank\n2. SEB\n3. Nordea\n4. Danske Bank\n5. Santander\n6. Handelsbanken\n7. Sparbanken\n8. Others"));
@@ -74,7 +75,7 @@ account.exit = function() {
     
   function checkPassword(password){ //to check if the password is correct or not    
         if(correct_pass.test(passwordEntered)){
-            optionMenu();
+            atm();
         }else{
             passTry = 3;
             while(!(correct_pass.test(passwordEntered))){
@@ -88,35 +89,35 @@ account.exit = function() {
                     break;
                 } 
                 passwordEntered = parseInt(prompt("Dear "+NAME+ ", Enter your 4 digits PIN"));
-            }optionMenu();
+            }atm();
         }
     }checkPassword(passwordEntered);
 
 
-    function optionMenu(){
+    function atm(){
     
         var menuChoice = parseFloat(prompt("Hello, customer, what can we do for you today ? \n 1. Get balance \n 2. withdrawal \n 3. Deposit\n4. Account \n5.Exit "));
         if(menuChoice==1){
            account.getBalance();
-           optionMenu();
+           atm();
 
         }else if(menuChoice==2){
             account.withdrawal();
-            optionMenu();
+            atm();
 
         }else if(menuChoice==3){
             account.deposit();
-            optionMenu();
+            atm();
 
 
         }else if(menuChoice==4){
             account.getAccountName();
-            optionMenu();
+            atm();
 
 
         }else if (menuChoice ==5){
             account.exit();
-            optionMenu();
+            atm();
         }
        
         else{
@@ -124,5 +125,5 @@ account.exit = function() {
         }
 
     }
-    this.optionMenu();
+    this.atm();
     
